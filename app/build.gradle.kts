@@ -2,9 +2,11 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
+
 android {
     namespace = "com.infinity.infigen"
     compileSdk = 35
+
     defaultConfig {
         applicationId = "com.infinity.infigen"
         minSdk = 23
@@ -12,7 +14,17 @@ android {
         versionCode = 2
         versionName = "1.2-cloud"
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
+
 dependencies {
     implementation("androidx.webkit:webkit:1.12.1")
 }
