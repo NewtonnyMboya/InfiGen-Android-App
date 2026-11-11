@@ -91,7 +91,7 @@ router.post("/register", async (req, res) => {
     );
 
     const user = inserted.rows[0];
-    const accountNumber = "IG" + crypto.randomBytes(8).toString("hex").toUpperCase();
+    const accountNumber = "IG" + crypto.randomBytes(8).toString("int").toUpperCase();
 
     await client.query(
       `INSERT INTO customer_accounts (user_id, account_number, currency, status)
