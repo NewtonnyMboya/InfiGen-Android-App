@@ -2,9 +2,19 @@ name: Build InfiGen Android APK
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "app/**"
+      - "frontend/**"
+      - "build.gradle.kts"
+      - "settings.gradle.kts"
+      - ".github/workflows/android.yml"
   push:
     branches:
       - main
+      - "fix/**"
     paths:
       - "app/**"
       - "frontend/**"
